@@ -1,5 +1,5 @@
 <template>
-  <div class="Search">
+  <div class="search">
     <h1>spacer</h1>
   </div>
 </template>
