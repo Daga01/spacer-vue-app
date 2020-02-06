@@ -12,7 +12,7 @@
       <Item v-for="item in results" :item="item"
       :key="item.data[0].nasa_id" @click.native="handleModalOpen(item)" />
     </div>
-    <Modal v-if="modalOpen" @closeModal="modalOpen = false"/>
+    <Modal v-if="modalOpen" :item="modalItem" @closeModal="modalOpen = false"/>
   </div>
 </template>
 <script>
@@ -41,12 +41,13 @@ export default {
       searchValue: '',
       results: [],
       modalOpen: false,
+      modalItem: null,
     };
   },
   methods: {
     handleModalOpen(item) {
       this.modalOpen = true;
-      console.log('hello item', item);
+      this.modalItem = item;
     },
     handleInput: debounce(function () {
       this.loading = true;

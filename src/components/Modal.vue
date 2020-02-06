@@ -2,14 +2,11 @@
 <div class="outerWrapper">
   <div class="innerWrapper">
     <div class="photo">
-
+      <img :src="photo">
     </div>
     <div class="description">
-      <h2 class="title">Lorem ipsum</h2>
-      <p class="description">
-        Lorem ipsum Lorem ipsum Lorem ipsum L
-        Lorem ipsum Lorem ipsum Lore Lorem ipsum
-      </p>
+      <h2 class="title">{{ title }}</h2>
+      <p class="description">{{ description }}</p>
     </div>
   </div>
   <div class="close" @click="$emit('closeModal')">
@@ -21,6 +18,24 @@
 <script>
 export default {
   name: 'Modal',
+  props: {
+    item: {
+      type: Object,
+      required: true,
+    },
+  },
+  data() {
+    return {
+      photo: null,
+      title: null,
+      description: null,
+    };
+  },
+  mounted() {
+    this.photo = this.item.links[0].href;
+    this.title = this.item.data[0].title;
+    this.description = this.item.data[0].description.substring(0, 200);
+  },
 };
 
 </script>
@@ -32,6 +47,17 @@ export default {
     position: fixed;
     top: 0;
     left: 0;
+
+    @media (min-width: 1024px) {
+      max-width: 70%;
+      height: 80%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      margin: auto;
+      box-shadow: 0 30px 30px -10px rgba(0,0,0, .3);
+    }
   }
 
   .close {
@@ -71,6 +97,15 @@ export default {
     align-items: center;
     flex-direction: column;
 
+    @media (min-width: 1024px) {
+      flex-direction: row;
+
+    .photo {
+      min-width: 50%;
+      margin-right: 20px;
+    }
+  }
+
     .photo {
       width: 100%;
       height: auto;
@@ -78,6 +113,7 @@ export default {
 
       img {
         width: 100%;
+        max-height: 400px;
       }
     }
 
