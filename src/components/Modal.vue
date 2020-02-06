@@ -34,7 +34,7 @@ export default {
   mounted() {
     this.photo = this.item.links[0].href;
     this.title = this.item.data[0].title;
-    this.description = this.item.data[0].description.substring(0, 200);
+    this.description = this.item.data[0].description.substring(0, 700);
   },
 };
 
@@ -93,13 +93,15 @@ export default {
   .innerWrapper {
     display: flex;
     height: 100%;
-    padding: 50px;
+    padding: 0 50px;
+    margin-top: 100px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 
     @media (min-width: 1024px) {
       flex-direction: row;
+      margin-top: 0;
 
     .photo {
       min-width: 50%;
@@ -113,6 +115,7 @@ export default {
 
       img {
         width: 100%;
+        max-width: 600px;
         max-height: 400px;
         border-radius: 5px;
       }
