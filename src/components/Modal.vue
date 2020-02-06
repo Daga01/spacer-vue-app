@@ -47,6 +47,7 @@ export default {
     position: fixed;
     top: 0;
     left: 0;
+    border-radius: 10px;
 
     @media (min-width: 1024px) {
       max-width: 70%;
@@ -109,11 +110,11 @@ export default {
     .photo {
       width: 100%;
       height: auto;
-      background: black;
 
       img {
         width: 100%;
         max-height: 400px;
+        border-radius: 5px;
       }
     }
 

@@ -33,6 +33,8 @@ export default {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50%;
+    cursor: pointer;
+    border-radius: 5px;
 
     @media (min-width: 768px) {
       width: 25vw;
