@@ -45,21 +45,20 @@ export default {
     height: 100%;
     max-width: 100%;
     position: fixed;
-    top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
 
     @media (min-width: 1024px) {
       max-width: 70%;
       height: 80%;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      top: 0;
       margin: auto;
       box-shadow: 0 30px 30px -10px rgba(0,0,0, .3);
     }
-  }
 
   .close {
     position: absolute;
@@ -93,25 +92,22 @@ export default {
   .innerWrapper {
     display: flex;
     height: 100%;
-    padding: 0 50px;
-    margin-top: 100px;
-    justify-content: center;
-    align-items: center;
+    padding: 0px 50px;
+    justify-content: flex-start;
+    align-items: flex-start;
     flex-direction: column;
 
     @media (min-width: 1024px) {
       flex-direction: row;
+      justify-content: center;
+      align-items: center;
       margin-top: 0;
-
-    .photo {
-      min-width: 50%;
-      margin-right: 20px;
     }
   }
-
     .photo {
       width: 100%;
       height: auto;
+      margin-top: 60px;
 
       img {
         width: 100%;
@@ -119,10 +115,17 @@ export default {
         max-height: 400px;
         border-radius: 5px;
       }
+
+      @media (min-width: 1024px) {
+      min-width: 50%;
+      margin-right: 20px;
+      margin-top: 0;
     }
+  }
 
     .description {
       color: #333;
+      width: 100%;
     }
 
     .title {
