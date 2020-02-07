@@ -124,5 +124,9 @@ export default {
     .description {
       color: #333;
     }
+
+    .title {
+      color: #1e3d4a
+    }
   }
 </style>
