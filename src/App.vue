@@ -59,7 +59,7 @@ export default {
       this.modalOpen = true;
       this.modalItem = item;
     },
-    handleInput: debounce(function () {
+    handleInput: debounce(function() {
       this.loading = true;
       console.log(this.searchValue);
       axios.get(`${API}?q=${this.searchValue}&media_type=image`)
